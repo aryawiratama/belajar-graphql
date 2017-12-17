@@ -1,0 +1,12 @@
+schema{
+    query: Query
+}
+type Query{
+    allBookCategory: [BookCategory]
+    bookCategory(id: String): BookCategory
+}
+type BookCategory{
+    id: String
+    name: String
+    description: String
+}
