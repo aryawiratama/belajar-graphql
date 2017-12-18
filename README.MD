@@ -10,7 +10,7 @@ Penjelasan lebih lanjut mengenai GraphQL bisa dibaca pada link berikut (http://g
 #### Category End Point
 * pada target ketik `localhost:8080/api/category`
 * lalu pada raw body ketik 
-```json 
+```
     {
         allBookCategory{
             id 
@@ -24,7 +24,7 @@ Penjelasan lebih lanjut mengenai GraphQL bisa dibaca pada link berikut (http://g
 * Book end point merupakan contoh graphql untuk relasi many to one
 * pada target ketik `localhost:8080/api/book/query`
 * lalu pada raw body buat objek seperti berikut
-```json
+```
     {
         books{
             id
