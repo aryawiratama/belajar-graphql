@@ -9,24 +9,31 @@ Penjelasan lebih lanjut mengenai GraphQL bisa dibaca pada link berikut (http://g
 * buka postman atau rest console
 #### Category End Point
 * pada target ketik `localhost:8080/api/category`
-* lalu pada raw body ketik `{allBookCategory{id name}}`
+* lalu pada raw body ketik 
+```json 
+    {
+        allBookCategory{id name}
+    }
+```
 * kemudian klik post
 
 #### Book End Point
 * Book end point merupakan contoh graphql untuk relasi many to one
 * pada target ketik `localhost:8080/api/book/query`
 * lalu pada raw body buat objek seperti berikut
-`{
-    books{
-        id
-        title
-        isbn
-        description
-        author
-        category{
+```json
+    {
+        books{
             id
-            name
+            title
+            isbn
+            description
+            author
+            category{
+                id
+                name
+            }
         }
     }
- }`
+```
 * kemudian klik post
