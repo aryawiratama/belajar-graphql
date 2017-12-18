@@ -1,5 +1,6 @@
 package com.belajar.graphql.datafetcher;
 
+import com.belajar.graphql.entity.Book;
 import com.belajar.graphql.entity.BookCategory;
 import com.belajar.graphql.repository.BookCategoryRepository;
 import graphql.schema.DataFetcher;
@@ -18,6 +19,11 @@ public class BookCategoryFetcher implements DataFetcher<BookCategory>{
     @Override
     public BookCategory get(DataFetchingEnvironment env) {
         Map<String, Object> args = env.getArguments();
-        return bookCategoryRepository.findOne(args.get("id").toString());
+        if(args.get("id") != null)
+            return bookCategoryRepository.findOne(args.get("id").toString());
+        else {
+            Book book = (Book) env.getSource();
+            return bookCategoryRepository.findOne(book.getBookCategory().getId());
+        }
     }
 }
