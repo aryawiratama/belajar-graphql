@@ -12,7 +12,10 @@ Penjelasan lebih lanjut mengenai GraphQL bisa dibaca pada link berikut (http://g
 * lalu pada raw body ketik 
 ```json 
     {
-        allBookCategory{id name}
+        allBookCategory{
+            id 
+            name
+        }
     }
 ```
 * kemudian klik post
